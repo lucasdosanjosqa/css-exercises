@@ -9,8 +9,7 @@ body {
   margin: 0;
   background: #aaa;
   color: #333;
-  /* I'll give you this one for free lol */
-  display: flex;
+  display: flex;  
   align-items: center;
   justify-content: center;
 }
@@ -20,6 +19,9 @@ body {
   width: 480px;
   border-radius: 10px;
   box-shadow: 2px 4px 16px rgba(0,0,0,.2);
+  padding: 24px; /* Padding uniforme em todas as bordas */
+  display: flex; /* Alinha o ícone e a div .modal-content lado a lado */
+  gap: 24px;     /* Garante espaço IGUAL entre a borda/ícone e ícone/texto */
 }
 
 .icon {
@@ -33,6 +35,26 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0; /* Impede que o ícone esmague */
+}
+
+.modal-content {
+  flex: 1; /* Ocupa todo o espaço restante */
+  display: flex;
+  flex-direction: column;
+}
+
+.tittle {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.header {
+  font-weight: 700;
+  font-size: 18px; 
+  line-height: 1.2;
 }
 
 .close-button {
@@ -40,7 +62,7 @@ body {
   border-radius: 50%;
   color: #888;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   height: 24px;
   width: 24px;
   display: flex;
@@ -48,12 +70,27 @@ body {
   justify-content: center;
   border: 1px solid #eee;
   padding: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.text {
+  margin-top: 12px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px; 
 }
 
 button {
   cursor: pointer;
   padding: 8px 16px;
   border-radius: 8px;
+  font-weight: 500;
 }
 
 button.continue {
